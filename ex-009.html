@@ -3,9 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Ex-09</title>
+
+    <style>
+        body {
+            background-color: darkgreen;
+            color: #fff;
+        }
+
+        div {
+            text-align: center;
+            align-items: center;
+            padding: 2px;
+        }
+
+    </style>
 </head>
 <body>
-    
+    <div>
+        <h1>Em que País você vive?</h1>
+        Digite seu pais: <input type="text" id="pais">
+        <input type="button" value="verificar" onclick="calcularPais()">
+
+        <div id="resposta">
+        </div>
+    </div>
+
+    <script>
+
+        function calcularPais() {
+            var pais = window.document.getElementById('pais')
+
+            var resp = window.document.getElementById('resposta')
+
+            resp.innerHTML= `Vivendo em ${pais.value.toUpperCase()} `
+
+            if (pais.value.toUpperCase() == 'BRASIL') {
+                resp.innerHTML += 'Você é Brasileiro.'
+            }
+            else {
+                resp.innerHTML += 'você é estrangeiro.'
+            }
+        }
+    </script>
 </body>
 </html>
